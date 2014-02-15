@@ -1,0 +1,24 @@
+{
+  "name": "LoeScore",
+  "version": "0.0.0",
+  "description": "Level of Engagement Score",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ItsJonQ/loescore.git"
+  },
+  "author": "Q",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ItsJonQ/loescore/issues"
+  },
+  "homepage": "https://github.com/ItsJonQ/loescore",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.8.0"
+  }
+}
