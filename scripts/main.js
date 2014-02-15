@@ -9,7 +9,8 @@
             jquery: ['../bower_components/jquery/jquery'],
             underscore: ['../bower_components/underscore/underscore'],
             backbone: ['../bower_components/backbone/backbone'],
-            bootstrap: ['../bower_components/bootstrap/dist/js/bootstrap']
+            bootstrap: ['../bower_components/bootstrap/dist/js/bootstrap'],
+            rsvp: ['../bower_components/rsvp/rsvp']
         },
 
         shim: {
@@ -25,12 +26,15 @@
             },
             'bootstrap': {
                 deps: ['jquery'],
-            }
+            },
+            'rsvp': {
+                exports: 'RSVP'
+            },
         }
 
     });
 
-    require(['jquery', 'underscore', 'backbone', 'app', 'bootstrap'], function($, _, Backbone, App) {
+    require(['jquery', 'underscore', 'backbone', 'rsvp', 'app', 'bootstrap'], function($, _, Backbone, RSVP, App) {
 
         // Initializing the App
         App.init();
