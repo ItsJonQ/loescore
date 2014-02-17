@@ -13,6 +13,7 @@ define(function(require) {
 
     // Define Required Methods
     var fetch = require('utils/fetch');
+    var formulas = require('utils/formulas');
 
     // Defining Variables
 
@@ -39,10 +40,14 @@ define(function(require) {
 
         var user;
 
-        $.when(fetch.user()).then(function(data) {
-            console.log(data);
-            console.log('wew');
-        });
+        var example = formulas.view(100, 10000);
+
+        console.log(example);
+
+        // $.when(fetch.user()).then(function(data) {
+        //     console.log(data);
+        //     console.log('wew');
+        // });
 
     };
 

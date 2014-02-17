@@ -13,17 +13,17 @@ module.exports = function(grunt) {
                 }
             }
         },
-        requirejs: {
-            compile: {
-                options: {
-                    baseUrl: 'scripts/',
-                    mainConfigFile: 'scripts/main.js',
-                    name: 'main',
-                    out: 'build/main.js',
-                    include: ['require.js']
-                }
-            }
-        },
+        // requirejs: {
+        //     compile: {
+        //         options: {
+        //             baseUrl: 'scripts/',
+        //             mainConfigFile: 'scripts/main.js',
+        //             name: 'main',
+        //             out: 'build/main.js',
+        //             include: ['require.js']
+        //         }
+        //     }
+        // },
         watch: {
             scripts: {
                 files: ['scripts/**/*.js'],
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
     // Load plugins here
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    // grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 
