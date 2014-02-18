@@ -47,8 +47,7 @@ define(function(require) {
     Api.fetch = fetch;
 
     // Pushing the Api to the global scope
-    window.LoeScore = Api;
-    window.Loescore = window.LoeScore;
+    window.Engy = Api;
 
     return Api;
 
