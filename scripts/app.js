@@ -35,10 +35,11 @@ define(function(require) {
         // Return false if the app has already initiated
         if(initStatus) return false;
         initStatus = true;
-        var stats = {};
 
-        fetch.views('vice');
-        fetch.views('jon4lakers');
+        console.log('EngyApp has initialized.');
+
+
+        fetch.engagement(false, true);
 
     };
 
