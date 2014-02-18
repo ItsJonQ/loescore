@@ -35,19 +35,10 @@ define(function(require) {
         // Return false if the app has already initiated
         if(initStatus) return false;
         initStatus = true;
+        var stats = {};
 
-        console.log('LoeScore Initialized.');
-
-        var user;
-
-        var example = formulas.view(100, 10000);
-
-        console.log(example);
-
-        // $.when(fetch.user()).then(function(data) {
-        //     console.log(data);
-        //     console.log('wew');
-        // });
+        fetch.views('vice');
+        fetch.views('jon4lakers');
 
     };
 

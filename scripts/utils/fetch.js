@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'utils/formulas'], function($, formulas) {
     'use strict';
 
     // Define the export
@@ -33,20 +33,40 @@ define(['jquery'], function($) {
     };
 
     // Fn: Method to fetch video Data
-    var fetchVideos = function(callback) {
-        return fetch(apiVideo, callback);
+    var fetchVideos = function(url) {
+        url = url ? url : apiVideo;
+        return fetch(url);
     };
 
     // Fn: Method to getch user Data
-    var fetchUser = function(callback) {
-        return fetch(apiUser, callback);
+    var fetchUser = function(url) {
+        url = url ? url : apiUser;
+        return fetch(url);
+    };
+
+    var fetchViewEngagement = function(user) {
+        if(!user) return false;
+
+        var videoUrl = 'http://gdata.youtube.com/feeds/api/users/'+user+'/uploads?v=2&alt=json';
+        var userUrl = 'http://gdata.youtube.com/feeds/api/users/'+user+'?v=2&alt=json';
+
+        $.when(fetchUser(userUrl)).then(function(data) {
+            var subs = parseInt(data.entry.yt$statistics.subscriberCount, 10);
+
+            $.when(fetchVideos(videoUrl)).then(function(data) {
+                var total = formulas.viewAverage(data, subs);
+                console.log(total);
+
+            });
+
+        });
     };
 
     exports = {
         videos: fetchVideos,
-        user: fetchUser
+        user: fetchUser,
+        views: fetchViewEngagement
     };
-
     return exports;
 
 });
